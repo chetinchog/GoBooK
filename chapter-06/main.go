@@ -7,11 +7,12 @@ import (
 // Main function
 func main() {
 	fmt.Println("- Start -")
+
+	fmt.Println("- Arrays -")
 	var x [5]int
 	x[4] = 100
 	fmt.Println(x)
 
-	fmt.Println("- -")
 	var y [5]float64
 	y[0] = 98
 	y[1] = 93
@@ -32,7 +33,7 @@ func main() {
 	}
 	fmt.Println(total / float64(len(y)))
 
-	fmt.Println("- -")
+	fmt.Println("- Slices -")
 	var s []float64
 	s = make([]float64, 5, 10)
 	fmt.Println(s)
@@ -46,7 +47,6 @@ func main() {
 	s = arr[:]
 	fmt.Println(s)
 
-	fmt.Println("- -")
 	slice1 := []int{1, 2, 3}
 	fmt.Println(slice1)
 	slice2 := append(slice1, 4, 5)
@@ -54,6 +54,8 @@ func main() {
 	slice3 := make([]int, 2)
 	copy(slice3, slice1)
 	fmt.Println(slice3)
+
+	fmt.Println("- Maps -")
 
 	fmt.Println("- End -")
 }
