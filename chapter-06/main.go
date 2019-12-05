@@ -152,23 +152,23 @@ func main() {
 	// 	37, 34, 83, 27, 37, 34, 83, 27, 37, 34, 83, 27, 37, 34, 83, 27,
 	// 	19, 97, 9, 17, 19, 97, 9, 17, 19, 97, 9, 17, 19, 97, 9, 17, 17,
 	// }
+
 	big := make(map[int]int)
 	for i := range make([]int8, 100000000) {
 		big[i] = i
 	}
 	fmt.Println("Searching min in", len(big)/1000000, "M items")
-	// timer := time.Now().Second()
-	fmt.Println("Time start:", time.Now().Second(), "s |", time.Now().Nanosecond()/100000000, "ms")
-	small(big)
-	fmt.Println("Time end:", time.Now().Second(), "s |", time.Now().Nanosecond()/100000000, "ms")
+	fmt.Println("Time start:", time.Now().String())
+	fmt.Println("Min item:", small(big))
+	fmt.Println("Time end:", time.Now().String())
 }
 
-func small(x map[int]int) {
+func small(x map[int]int) int {
 	s := x[0]
 	for _, v := range x {
 		if v < s {
 			s = v
 		}
 	}
-	fmt.Println("Min item:", s)
+	return s
 }
